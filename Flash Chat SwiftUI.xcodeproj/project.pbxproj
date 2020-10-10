@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,9 @@
 		8A1435862531ED5300618313 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1435852531ED5300618313 /* ContentView.swift */; };
 		8A1435882531ED5400618313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1435872531ED5400618313 /* Assets.xcassets */; };
 		8A14358B2531ED5400618313 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A14358A2531ED5400618313 /* Preview Assets.xcassets */; };
+		8A1435942531EDA900618313 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1435932531EDA900618313 /* WelcomeView.swift */; };
+		8A14359A2531EE7400618313 /* GhostTypewriter in Frameworks */ = {isa = PBXBuildFile; productRef = 8A1435992531EE7400618313 /* GhostTypewriter */; };
+		8A14359D2531EEDB00618313 /* TypeWriterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A14359C2531EEDB00618313 /* TypeWriterText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,8 @@
 		8A1435872531ED5400618313 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A14358A2531ED5400618313 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8A14358C2531ED5400618313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A1435932531EDA900618313 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		8A14359C2531EEDB00618313 /* TypeWriterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeWriterText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A14359A2531EE7400618313 /* GhostTypewriter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				8A1435832531ED5300618313 /* Flash_Chat_SwiftUIApp.swift */,
-				8A1435852531ED5300618313 /* ContentView.swift */,
+				8A1435962531EDB300618313 /* Views */,
 				8A1435872531ED5400618313 /* Assets.xcassets */,
 				8A14358C2531ED5400618313 /* Info.plist */,
 				8A1435892531ED5400618313 /* Preview Content */,
@@ -67,6 +73,16 @@
 				8A14358A2531ED5400618313 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8A1435962531EDB300618313 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8A1435852531ED5300618313 /* ContentView.swift */,
+				8A1435932531EDA900618313 /* WelcomeView.swift */,
+				8A14359C2531EEDB00618313 /* TypeWriterText.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +101,9 @@
 			dependencies = (
 			);
 			name = "Flash Chat SwiftUI";
+			packageProductDependencies = (
+				8A1435992531EE7400618313 /* GhostTypewriter */,
+			);
 			productName = "Flash Chat SwiftUI";
 			productReference = 8A1435802531ED5300618313 /* Flash Chat SwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +131,9 @@
 				Base,
 			);
 			mainGroup = 8A1435772531ED5300618313;
+			packageReferences = (
+				8A1435982531EE7400618313 /* XCRemoteSwiftPackageReference "GhostTypewriter" */,
+			);
 			productRefGroup = 8A1435812531ED5300618313 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +161,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A1435862531ED5300618313 /* ContentView.swift in Sources */,
+				8A1435942531EDA900618313 /* WelcomeView.swift in Sources */,
 				8A1435842531ED5300618313 /* Flash_Chat_SwiftUIApp.swift in Sources */,
+				8A14359D2531EEDB00618313 /* TypeWriterText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8A1435982531EE7400618313 /* XCRemoteSwiftPackageReference "GhostTypewriter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wibosco/GhostTypewriter.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8A1435992531EE7400618313 /* GhostTypewriter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A1435982531EE7400618313 /* XCRemoteSwiftPackageReference "GhostTypewriter" */;
+			productName = GhostTypewriter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8A1435782531ED5300618313 /* Project object */;
 }
