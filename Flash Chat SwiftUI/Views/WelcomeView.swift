@@ -16,13 +16,31 @@ struct WelcomeView: View {
                 .alignment(.center)
                 .foregroundColor(.systemTeal)
             Spacer()
+            Button(action: {}) {
+                HStack {
+                    Text("Log In")
+                    Image(systemName: "arrow.right.square")
+                }
+                .font(.largeTitle)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .foregroundColor(.white)
+                .background(Color.accentColor)
+            }
+            .padding()
+            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                Text("Register")
+            }.padding()
         }
-        
     }
 }
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        Group {
+            WelcomeView()
+            WelcomeView()
+                .preferredColorScheme(.dark)
+        }
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct Flash_Chat_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WelcomeView()
         }
     }
 }
