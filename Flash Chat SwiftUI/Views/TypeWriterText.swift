@@ -22,7 +22,7 @@ struct TypeWriterText: UIViewRepresentable {
     }
     
     func makeUIView(context: Context) -> TypewriterLabel {
-        let label = TypewriterLabel(frame: .zero)
+        let label = TypewriterLabel()
         label.text = labelText
         label.textAlignment = labelAlignment
         label.font = labelFont

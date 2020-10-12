@@ -43,8 +43,9 @@ struct ChatView: View {
                 .background(Color("BrandPurple"))
             }
         }
-        .navigationBarTitle(Text("⚡️FlashChat"))
+        .navigationTitle(Text("⚡️FlashChat"))
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(/*@START_MENU_TOKEN@*/false/*@END_MENU_TOKEN@*/)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Text("Log Out")
