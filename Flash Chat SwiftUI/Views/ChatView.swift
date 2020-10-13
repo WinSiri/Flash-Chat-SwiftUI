@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct ChatView: View {
+    @Binding var isLogin: Bool
     @State var textMessage = ""
     
     var body: some View {
+        //  To set background colour of NavigationView stack
+        //  In UIKit, use Interface builder to set background colour of the root view in ViewController.
+        //  To achieve this in SwiftUI, use ZStack and Color().edgesIgnoringSafeArea(.all)
         ZStack {
             Color("BrandPurple").edgesIgnoringSafeArea(.all)
             VStack {
-//                List(messages) { message in
+                //  List(messages) { message in
                 ScrollView {
                     LazyVStack(alignment: .leading) {
                         ForEach(messages) { message in
@@ -45,17 +49,18 @@ struct ChatView: View {
         }
         .navigationTitle(Text("⚡️FlashChat"))
         .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(/*@START_MENU_TOKEN@*/false/*@END_MENU_TOKEN@*/)
+        .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Text("Log Out")
+                Button("Log Out", action: { isLogin = false })
             }
         }
     }
 }
 
+
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView()
+        ChatView(isLogin: .constant(true))
     }
 }
