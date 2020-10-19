@@ -13,4 +13,9 @@ class ChatViewModel: ObservableObject {
     init() {
         messages = testMessages
     }
+
+    func addNewMessage(_ newText: String) {
+        let newMessage = Message(sender: "foo@bar.com", text: newText)
+        messages.append(newMessage)
+    }
 }

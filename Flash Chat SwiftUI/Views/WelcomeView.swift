@@ -35,6 +35,7 @@ struct WelcomeView: View {
                     .textContentType(.password)
                     .padding(.horizontal)
                     .background(Color(.systemBackground))
+                
                 //  Use NavigationLink(isActive: ) binding to make pushing and popping view
                 Button(action: { isSuccessfulLogin = true }) {
                     NavigationLink(destination: ChatView(isLogin: $isSuccessfulLogin), isActive: $isSuccessfulLogin) {
@@ -48,7 +49,7 @@ struct WelcomeView: View {
                     .padding()
                     .frame(maxWidth: .infinity)
                     .foregroundColor(.white)
-                    .background(Color.accentColor)
+                    .background(Color("BrandBlue"))
                 }
                 .padding()
                 .disabled(textUserName.isEmpty || textPassword.isEmpty)

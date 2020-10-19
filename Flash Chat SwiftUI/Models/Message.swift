@@ -8,6 +8,11 @@
 import Foundation
 
 struct Message: Identifiable, Equatable {
+    internal init(sender: String, text: String) {
+        self.sender = sender
+        self.text = text
+    }
+    
     let id: String = UUID().uuidString
     
     let sender: String

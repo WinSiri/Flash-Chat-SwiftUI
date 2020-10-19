@@ -12,6 +12,11 @@ struct ChatView: View {
     @Binding var isLogin: Bool
     @State private var textMessage = ""
     
+    fileprivate func addNewChatMessage() {
+        chatViewModel.addNewMessage(textMessage)
+        textMessage = ""
+    }
+    
     var body: some View {
         //  To set background colour of NavigationView stack
         //  In UIKit, use Interface builder to set background colour of the root view in ViewController.
@@ -37,18 +42,25 @@ struct ChatView: View {
                         .onAppear(perform: {
                             scrollViewProxy.scrollTo(chatViewModel.messages.last?.id, anchor: .bottom)
                         })
+                        .onChange(of: chatViewModel.messages, perform: { _ in
+                            scrollViewProxy.scrollTo(chatViewModel.messages.last?.id, anchor: .bottom)
+                        })
+
                     }
                     .background(Color(.systemBackground))
                 }
                 HStack {
-                    TextField("Write a message..", text: $textMessage, onEditingChanged: {_ in }, onCommit: {})
+                    TextField("Write a message..", text: $textMessage,
+                              onEditingChanged: { _ in },
+                              onCommit: { addNewChatMessage() })
                         .padding(8.0)
                         .background(Color(.systemBackground))
-                    Button(action: {}) {
+                    Button(action: { addNewChatMessage() }, label: {
                         Image(systemName: "paperplane.fill")
                             .padding()
-                    }
+                    })
                     .accentColor(.white)
+                    .disabled(textMessage.isEmpty)
                 }
                 .padding(.horizontal, 8.0)
                 .background(Color("BrandPurple"))
