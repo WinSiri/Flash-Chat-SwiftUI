@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Message: Identifiable {
-    var id = UUID()
+struct Message: Identifiable, Equatable {
+    let id: String = UUID().uuidString
     
     let sender: String
     let text: String
 }
 
-let messages: [Message] =
+let testMessages: [Message] =
     [
         Message(sender: "foo@bar.com", text: "Hey!"),
         Message(sender: "john@bar.com", text: "Hello!"),

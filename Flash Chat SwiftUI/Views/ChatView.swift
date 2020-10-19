@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ChatView: View {
+    @ObservedObject var chatViewModel = ChatViewModel()
     @Binding var isLogin: Bool
-    @State var textMessage = ""
+    @State private var textMessage = ""
     
     var body: some View {
         //  To set background colour of NavigationView stack
@@ -20,19 +21,25 @@ struct ChatView: View {
             VStack {
                 //  List(messages) { message in
                 ScrollView {
-                    LazyVStack(alignment: .leading) {
-                        ForEach(messages) { message in
-                            VStack(alignment: .leading) {
-                                Text(message.sender)
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
-                                Text(message.text)
+                    ScrollViewReader { scrollViewProxy in
+                        LazyVStack(alignment: .leading) {
+                            ForEach(chatViewModel.messages) { message in
+                                VStack(alignment: .leading) {
+                                    Text(message.sender)
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                    Text(message.text)
+                                }
+                                .padding(8.0)
+                                .id(message.id)
                             }
-                            .padding(8.0)
                         }
+                        .onAppear(perform: {
+                            scrollViewProxy.scrollTo(chatViewModel.messages.last?.id, anchor: .bottom)
+                        })
                     }
+                    .background(Color(.systemBackground))
                 }
-                .background(Color(.systemBackground))
                 HStack {
                     TextField("Write a message..", text: $textMessage, onEditingChanged: {_ in }, onCommit: {})
                         .padding(8.0)

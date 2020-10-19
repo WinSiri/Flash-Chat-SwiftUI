@@ -13,6 +13,7 @@
 		8A1435942531EDA900618313 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1435932531EDA900618313 /* WelcomeView.swift */; };
 		8A14359A2531EE7400618313 /* GhostTypewriter in Frameworks */ = {isa = PBXBuildFile; productRef = 8A1435992531EE7400618313 /* GhostTypewriter */; };
 		8A14359D2531EEDB00618313 /* TypeWriterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A14359C2531EEDB00618313 /* TypeWriterText.swift */; };
+		8A8FC217253D708E00021B9C /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FC216253D708E00021B9C /* ChatViewModel.swift */; };
 		8AEA1A722532D31300536C13 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEA1A712532D31300536C13 /* ChatView.swift */; };
 		8AEA1A752532D5E100536C13 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEA1A742532D5E100536C13 /* Message.swift */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 		8A14358C2531ED5400618313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A1435932531EDA900618313 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		8A14359C2531EEDB00618313 /* TypeWriterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeWriterText.swift; sourceTree = "<group>"; };
+		8A8FC216253D708E00021B9C /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		8AEA1A712532D31300536C13 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		8AEA1A742532D5E100536C13 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,10 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				8A1435832531ED5300618313 /* Flash_Chat_SwiftUIApp.swift */,
+				8AEA1A772532D5EA00536C13 /* Models */,
 				8A1435962531EDB300618313 /* Views */,
+				8A8FC215253D706F00021B9C /* ViewModels */,
 				8A1435872531ED5400618313 /* Assets.xcassets */,
 				8A14358C2531ED5400618313 /* Info.plist */,
-				8AEA1A772532D5EA00536C13 /* Models */,
 				8A1435892531ED5400618313 /* Preview Content */,
 			);
 			path = "Flash Chat SwiftUI";
@@ -86,6 +89,14 @@
 				8A14359C2531EEDB00618313 /* TypeWriterText.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8A8FC215253D706F00021B9C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8A8FC216253D708E00021B9C /* ChatViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		8AEA1A772532D5EA00536C13 /* Models */ = {
@@ -175,6 +186,7 @@
 				8A1435942531EDA900618313 /* WelcomeView.swift in Sources */,
 				8AEA1A752532D5E100536C13 /* Message.swift in Sources */,
 				8A1435842531ED5300618313 /* Flash_Chat_SwiftUIApp.swift in Sources */,
+				8A8FC217253D708E00021B9C /* ChatViewModel.swift in Sources */,
 				8A14359D2531EEDB00618313 /* TypeWriterText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

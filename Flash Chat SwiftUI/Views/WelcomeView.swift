@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     @State var textUserName = "foo@bar.com"
-    @State var textPassword = ""
+    @State var textPassword = "foo"
     @State var isSuccessfulLogin = false
     
     var body: some View {
@@ -20,7 +20,9 @@ struct WelcomeView: View {
                     .font(.systemFont(ofSize: 40.0, weight: .black))
                     .alignment(.center)
                     .foregroundColor(.systemTeal)
-                //  .fixedSize()
+                    .fixedSize()
+                Spacer()
+                
                 TextField("User email", text: $textUserName, onEditingChanged: {_ in }, onCommit: {})
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .textContentType(.username)
@@ -33,14 +35,14 @@ struct WelcomeView: View {
                     .textContentType(.password)
                     .padding(.horizontal)
                     .background(Color(.systemBackground))
-                Spacer()
                 //  Use NavigationLink(isActive: ) binding to make pushing and popping view
                 Button(action: { isSuccessfulLogin = true }) {
                     NavigationLink(destination: ChatView(isLogin: $isSuccessfulLogin), isActive: $isSuccessfulLogin) {
-                        HStack {
-                            Text("Log In")
-                            Image(systemName: "arrow.right.square")
-                        }
+                        //  HStack {
+                        //      Text("Log In")
+                        //      Image(systemName: "arrow.right.square")
+                        //  }
+                        Label("Log In", systemImage: "arrow.down.square")
                     }
                     .font(.largeTitle)
                     .padding()
